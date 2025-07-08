@@ -17,6 +17,8 @@ This ImageViewer is a WPF-based application designed to provide a smooth and int
 - **⚡ Dependency Injection**: Microsoft.Extensions.DependencyInjection for loose coupling
 - **📖 Command-line Support**: Launch with custom directory paths
 - **🔄 Resource Management**: Optimized image loading and display
+- **🚀 Lazy Loading**: Efficient memory usage with lazy initialization patterns
+- **⚡ Async Operations**: Non-blocking UI with asynchronous image processing and loading
 
 ## 🏗️ Architecture
 
@@ -101,12 +103,15 @@ graph TD
 - **Unidirectional Dependencies**: No circular references, maintaining clean structure
 - **Testability**: Business logic is isolated and easily testable
 - **Maintainability**: Changes in outer layers don't affect inner layers
+- **Performance Optimization**: Lazy loading and async patterns reduce memory footprint and improve responsiveness
+- **Scalability**: Efficient resource management handles large image collections without performance degradation
 
 ## 🛠️ Technical Stack
 
 - **Framework**: .NET 7.0 Windows
 - **UI**: WPF (Windows Presentation Foundation)
 - **Architecture**: Clean Architecture with MVVM pattern
+- **Performance**: Lazy loading and async/await patterns for optimal responsiveness
 - **Dependencies**:
   - CommunityToolkit.Mvvm (8.2.1)
   - DevExpress.Mvvm.CodeGenerators (22.1.1)
@@ -166,6 +171,8 @@ graph TD
 - **Themes**: Switch between Light and Dark themes
 - **Zoom**: Zoom in/out functionality for detailed viewing
 - **File Support**: Common image formats (PNG, JPG, JPEG, GIF, BMP, etc.)
+- **Performance**: Lazy loading ensures images are loaded only when needed
+- **Responsiveness**: Asynchronous operations keep the UI smooth and responsive
 
 ## 🎨 Theming
 
@@ -221,6 +228,8 @@ The application uses:
 - **Resource dictionaries** for theming
 - **Dependency injection** for service management
 - **MVVM pattern** for UI logic separation
+- **Lazy initialization** for optimized memory usage
+- **Asynchronous patterns** for non-blocking operations
 
 ## 🤝 Contributing
 
