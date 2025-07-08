@@ -1,6 +1,6 @@
 # ImageViewer
 
-<img src="./README_IMAGE/image.png" width="40%" />
+<img src="./README_IMAGE/image.png" width="60%" />
 
 A modern, feature-rich image viewer application built with C# and WPF, following clean architecture principles.
 
