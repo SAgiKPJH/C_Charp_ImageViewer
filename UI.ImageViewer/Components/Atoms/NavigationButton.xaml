@@ -1,0 +1,93 @@
+<Button
+    x:Class="UI.ImageViewer.Components.Atoms.NavigationButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UI.ImageViewer.Components.Atoms"
+    d:DesignHeight="40"
+    d:DesignWidth="40"
+    mc:Ignorable="d">
+    <Button.Resources>
+        <SolidColorBrush x:Key="AccentButtonBackground" Color="{DynamicResource SystemAccentColor1Brush}" />
+        <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="{DynamicResource SystemAccentColor2Brush}" />
+        <SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="{DynamicResource SystemAccentColor3Brush}" />
+        <SolidColorBrush x:Key="AccentButtonBackgroundDisabled" Color="{DynamicResource AccentAAFillColorDisabled}" />
+        <SolidColorBrush x:Key="AccentButtonForeground" Color="{DynamicResource TextOnAccentAAFillColorPrimary}" />
+        <SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="{DynamicResource TextOnAccentAAFillColorPrimary}" />
+        <SolidColorBrush x:Key="AccentButtonForegroundPointerOverEnable" Color="{DynamicResource TextFontForeGroundColor}" />
+        <SolidColorBrush x:Key="AccentButtonForegroundPressed" Color="{DynamicResource TextOnAccentAAFillColorSecondary}" />
+        <SolidColorBrush x:Key="AccentButtonForegroundDisabled" Color="{DynamicResource TextOnAccentAAFillColorDisabled}" />
+        <SolidColorBrush x:Key="AccentButtonBorderBrushPressed" Color="{DynamicResource ControlFillColorTransparentBrush}" />
+        <SolidColorBrush x:Key="AccentButtonBorderBrushDisabled" Color="{DynamicResource ControlFillColorTransparentBrush}" />
+    </Button.Resources>
+    <Button.Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="UseLayoutRounding" Value="True" />
+            <Setter Property="Content" Value="" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate x:Name="AccentButtonTemplate" TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="border"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            SnapsToDevicePixels="true">
+                            <StackPanel
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Orientation="Horizontal">
+                                <Image Width="16" Source="{Binding Glyph, RelativeSource={RelativeSource AncestorType=Button}}">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Style.Triggers>
+                                                <DataTrigger Value="{x:Null}" Binding="{Binding Glyph, RelativeSource={RelativeSource AncestorType=Button}}">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <ContentPresenter
+                                    x:Name="contentPresenter"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Focusable="False"
+                                    RecognizesAccessKey="True"
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </StackPanel>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Background" Value="{DynamicResource AccentButtonBackground}" />
+                                <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="{DynamicResource AccentButtonForeground}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundDisabled}" />
+                                <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="{DynamicResource AccentButtonForegroundPointerOverEnable}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource AccentButtonBackgroundPointerOver}" />
+                                <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="{DynamicResource AccentButtonForegroundPointerOver}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseCaptured" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource AccentButtonBackgroundPressed}" />
+                                <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="{DynamicResource AccentButtonForegroundPressed}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Button.Style>
+</Button>

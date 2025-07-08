@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <AssemblyName>UI.ImageViewer.Host</AssemblyName>
+    <RootNamespace>UI.ImageViewer.Host</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Abstractions\Resources\Themes\Dark\Icons\accentfastforward.svg" />
+    <None Remove="Abstractions\Resources\Themes\Dark\Icons\accentnext.svg" />
+    <None Remove="Abstractions\Resources\Themes\Dark\Images\NoImage.png" />
+    <None Remove="Abstractions\Resources\Themes\Light\Icons\accentfastforward.svg" />
+    <None Remove="Abstractions\Resources\Themes\Light\Icons\accentnext.svg" />
+    <None Remove="Abstractions\Resources\Themes\Light\Images\NoImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.ImageViewer\Application.ImageViewer.csproj" />
+    <ProjectReference Include="..\UI.ImageViewer\UI.ImageViewer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Abstractions\Resources\Themes\Dark\Icons\accentfastforward.svg" />
+    <Resource Include="Abstractions\Resources\Themes\Dark\Icons\accentnext.svg" />
+    <Resource Include="Abstractions\Resources\Themes\Dark\Images\NoImage.png" />
+    <Resource Include="Abstractions\Resources\Themes\Light\Icons\accentfastforward.svg" />
+    <Resource Include="Abstractions\Resources\Themes\Light\Icons\accentnext.svg" />
+    <Resource Include="Abstractions\Resources\Themes\Light\Images\NoImage.png" />
+  </ItemGroup>
+
+</Project>

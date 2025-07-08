@@ -1,0 +1,106 @@
+<UserControl
+    x:Class="UI.ImageViewer.Views.ImageViewerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:molecules="clr-namespace:UI.ImageViewer.Components.Molecules"
+    xmlns:local="clr-namespace:UI.ImageViewer.Views"
+    d:DesignHeight="800"
+    d:DesignWidth="1000"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <SolidColorBrush x:Key="SystemBackgroundColor" Color="{DynamicResource SystemBGColor1Brush}" />
+        <SolidColorBrush x:Key="BackgroundColor" Color="{DynamicResource SystemGruopColorBrush}" />
+        <SolidColorBrush x:Key="BorderColor" Color="{DynamicResource SystemGruopBorderColorBrush}" />
+        <SolidColorBrush x:Key="SystemTextColor1" Color="{DynamicResource SystemTextColorPressBrush}" />
+    </UserControl.Resources>
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:EventToCommand
+            Command="{Binding KeyDownCommand}"
+            EventName="PreviewKeyDown"
+            PassEventArgsToCommand="True" />
+    </dxmvvm:Interaction.Behaviors>
+    <Grid Background="{DynamicResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="40" />
+            <RowDefinition>
+                <RowDefinition.Style>
+                    <Style TargetType="RowDefinition">
+                        <Style.Triggers>
+                            <DataTrigger Value="True" Binding="{Binding ShowImageNames}">
+                                <Setter Property="Height" Value="220" />
+                            </DataTrigger>
+                            <DataTrigger Value="False" Binding="{Binding ShowImageNames}">
+                                <Setter Property="Height" Value="170" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </RowDefinition.Style>
+            </RowDefinition>
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <!--  메인 이미지  -->
+        <Border
+            Grid.Row="0"
+            CornerRadius="8"
+            Background="{DynamicResource SystemBackgroundColor}">
+            <Image Source="{Binding SelectedImage.DisplayImageSource, UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform" />
+        </Border>
+        <!--  이미지 선택 네비게이션  -->
+        <!--  파일명 표시 체크박스  -->
+        <CheckBox
+            Grid.Row="1"
+            Margin="10,5,10,5"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            d:Content="Display name"
+            IsChecked="{Binding ShowImageNames}"
+            Content="{Binding DisplayName, RelativeSource={RelativeSource AncestorType=local:ImageViewerView}}" />
+        <molecules:PageNavigation
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            CurrentPage="{Binding SelectedIndex}"
+            TotalPages="{Binding TotalCount}"
+            FirstCommand="{Binding FirstImageCommand}"
+            PreviousCommand="{Binding PrevImageCommand}"
+            NextCommand="{Binding NextImageCommand}"
+            LastCommand="{Binding LastImageCommand}" />
+        <!--  썸네일 영역  -->
+        <ScrollViewer
+            Grid.Row="2"
+            Margin="10"
+            VerticalScrollBarVisibility="Disabled"
+            HorizontalScrollBarVisibility="Disabled">
+            <Border
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                CornerRadius="8"
+                BorderThickness="1"
+                BorderBrush="{DynamicResource SystemTextColor1}">
+                <StackPanel>
+                    <!--  썸네일 리스트박스  -->
+                    <molecules:ThumbnailListBox
+                        ItemsSource="{Binding VisibleImages, UpdateSourceTrigger=PropertyChanged}"
+                        SelectedItem="{Binding SelectedImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        MouseWheelCommand="{Binding MouseWheelCommand}"
+                        ShowImageNames="{Binding ShowImageNames}" />
+
+                    <!--  하단 썸네일 페이지 네비게이션  -->
+                    <molecules:PageNavigation
+                        Margin="0,0,0,4"
+                        CurrentPage="{Binding CurrentThumbnailPage}"
+                        TotalPages="{Binding TotalThumbnailPages}"
+                        FirstCommand="{Binding FirstThumbnailPageCommand}"
+                        PreviousCommand="{Binding PrevThumbnailPageCommand}"
+                        NextCommand="{Binding NextThumbnailPageCommand}"
+                        LastCommand="{Binding LastThumbnailPageCommand}" />
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+<UserControl
+    x:Class="UI.ImageViewer.Components.Atoms.ThumbnailImage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UI.ImageViewer.Components.Atoms"
+    d:DesignHeight="120"
+    d:DesignWidth="120"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <StackPanel
+        Margin="4"
+        HorizontalAlignment="Center"
+        Orientation="Vertical">
+        <Grid>
+            <Border
+                Name="mask"
+                CornerRadius="8"
+                Background="White" />
+            <Grid>
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=mask}" />
+                </Grid.OpacityMask>
+                <Image
+                    Width="100"
+                    Height="100"
+                    Source="{Binding DisplayImageSource}"
+                    Stretch="UniformToFill" />
+            </Grid>
+        </Grid>
+        <TextBlock
+            MaxWidth="100"
+            Margin="0,4,0,0"
+            HorizontalAlignment="Center"
+            Text="{Binding DisplayName}"
+            FontSize="12"
+            TextWrapping="Wrap"
+            TextAlignment="Center"
+            Visibility="{Binding ShowImageNames, RelativeSource={RelativeSource AncestorType=local:ThumbnailImage}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+    <dx:SvgImageSource
+        x:Key="AccentFastForward"
+        options:Freeze="True"
+        Uri="pack://application:,,,/UI.ImageViewer.Host;component/Abstractions/Resources/Themes/Dark/Icons/accentfastforward.svg" />
+    <dx:SvgImageSource
+        x:Key="AccentNext"
+        options:Freeze="True"
+        Uri="pack://application:,,,/UI.ImageViewer.Host;component/Abstractions/Resources/Themes/Dark/Icons/accentnext.svg" />
+</ResourceDictionary>

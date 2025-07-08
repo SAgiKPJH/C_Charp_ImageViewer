@@ -1,0 +1,19 @@
+<Application
+    x:Class="UI.ImageViewer.Host.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="/Abstractions/Resources/Themes/Dark/ColorResource.xaml" />
+                <ResourceDictionary Source="/Abstractions/Resources/Themes/Light/ColorResource.xaml" />
+                <ResourceDictionary Source="/Abstractions/Resources/Themes/Dark/ImageResource.xaml" />
+                <ResourceDictionary Source="/Abstractions/Resources/Themes/Light/ImageResource.xaml" />
+
+                <ResourceDictionary Source="/Abstractions/Resources/ImageTransform.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,78 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+    <!--  Light Theme  -->
+
+    <!--#region Background Colors-->
+    <Color x:Key="SystemBGColor1Brush">#FFFFFF</Color>
+    <Color x:Key="SystemBGColor2Brush">#F0F0F0</Color>
+    <Color x:Key="SystemBGColor3Brush">#E3E1EC</Color>
+    <Color x:Key="SystemBGColor4Brush">#F2F5FA</Color>
+
+    <Color x:Key="DefaultButtonBackgroundColorBrush1">#FFFFFF</Color>
+    <Color x:Key="DefaultButtonBackgroundColorBrush2">#EAEAEA</Color>
+    <Color x:Key="DefaultButtonBackgroundColorBrush3">#F1F1F1</Color>
+    <!--#endregion-->
+
+    <!--#region Text Colors-->
+    <Color x:Key="SystemTextColor1Brush">#000000</Color>
+    <Color x:Key="SystemTextColorPressBrush">#626262</Color>
+    <!--#endregion-->
+
+    <!--#region Accent Colors-->
+    <Color x:Key="SystemAccentColor1Brush">#FF196EBF</Color>
+    <Color x:Key="SystemAccentColor2Brush">#90005FB8</Color>
+    <Color x:Key="SystemAccentColor3Brush">#80005FB8</Color>
+    <Color x:Key="AccentAAFillColorDisabled">#c4c4c4</Color>
+    <Color x:Key="ContextMenuAccentForeColor">#FFFFFF</Color>
+    <Color x:Key="TextOnAccentAAFillColorPrimary">#FFFFFF</Color>
+    <Color x:Key="TextFontForeGroundColor">#FFFFFF</Color>
+    <Color x:Key="TextOnAccentAAFillColorSecondary">#70FFFFFF</Color>
+    <Color x:Key="TextOnAccentAAFillColorDisabled">#FFFFFF</Color>
+    <Color x:Key="ControlFillColorTransparentBrush">#00FFFFFF</Color>
+
+    <Color x:Key="ControlStrokeColorOnAccentDefault">#FF3f98dc</Color>
+    <Color x:Key="ControlStrokeColorOnAccentSecondary">#FFaed0ea</Color>
+    <Color x:Key="ControlStrokeColorOnAccentTertiary">#37000000</Color>
+    <Color x:Key="ControlStrokeColorOnAccentDisabled">#33000000</Color>
+    <!--#endregion-->
+
+    <!--#region Main Title & Border Colors-->
+    <Color x:Key="MainTitleColor1Brush">#E4E4E4</Color>
+    <Color x:Key="MainBorderColor1Brush">#F9F9F9</Color>
+    <Color x:Key="MainBorderColor2Brush">#F3F3F3</Color>
+    <Color x:Key="MainBorderColor3Brush">#EBEBEB</Color>
+    <Color x:Key="DialogBorderColorBrush">#818181</Color>
+    <!--#endregion-->
+
+    <!--#region Accent Other Colors-->
+    <Color x:Key="SystemAccentGreenColor1Brush">#FF00A431</Color>
+    <Color x:Key="SystemAccentGreenColor2Brush">#9000A431</Color>
+    <Color x:Key="SystemAccentGreenColor3Brush">#8000A431</Color>
+    <Color x:Key="SystemAccentRedColor1Brush">#FFA40031</Color>
+    <Color x:Key="SystemAccentRedColor2Brush">#90A40031</Color>
+    <Color x:Key="SystemAccentRedColor3Brush">#80A40031</Color>
+    <!--#endregion-->
+
+    <!--#region Toast Colors-->
+    <Color x:Key="InformationBrush">#6382FB</Color>
+    <Color x:Key="ErrorBrush">#FF6868</Color>
+    <Color x:Key="WarningBrush">#FACD5B</Color>
+    <Color x:Key="SuccessBrush">#60D989</Color>
+    <!--#endregion-->
+
+    <!--#region  Group Box Colors-->
+    <Color x:Key="SystemGruopColorBrush">#f0f0f0</Color>
+    <Color x:Key="SystemGruopBorderColorBrush">#fdfdfd</Color>
+    <!--#endregion-->
+
+    <!--#region Color Border Color-->
+    <Color x:Key="ColorBorderBrush">#D0D0D0</Color>
+    <Color x:Key="TopColorBorderBrush">#E3E3E3</Color>
+    <Color x:Key="BottomColorBorderBrush">#BFBFBF</Color>
+    <!--#endregion-->
+
+    <Color x:Key="HamburgermenuPaneBackground">#E4E4E4</Color>
+
+</ResourceDictionary>

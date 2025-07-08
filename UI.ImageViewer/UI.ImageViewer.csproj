@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <AssemblyName>UI.ImageViewer</AssemblyName>
+    <RootNamespace>UI.ImageViewer</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="DevExpress.Mvvm.CodeGenerators" Version="22.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Presentation.ImageViewer\Infrastructure.Presentation.ImageViewer.csproj" />
+    <ProjectReference Include="..\Application.ImageViewer\Application.ImageViewer.csproj" />
+  </ItemGroup>
+</Project>
